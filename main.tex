@@ -1,0 +1,76 @@
+\documentclass[dvipdfmx,cjk,usepdftitle=false]{beamer} 
+\setbeamertemplate{caption}[numbered]
+
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} %% しおりが文字化けしないように
+%\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+%\setbeamertemplate{navigation symbols}{} %% 右下のアイコンを消す
+
+%\usetheme{CambridgeUS}         %% theme の選択
+%\usetheme{Boadilla}           %% Beamer のディレクトリの中の
+\usetheme{Madrid}             %% beamerthemeCambridgeUS.sty を指定
+%\usetheme{Antibes}            %% 色々と試してみるといいだろう
+%\usetheme{Montpellier}        %% サンプルが beamer\doc に色々とある。
+%\usetheme{Berkeley}
+%\usetheme{Goettingen}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+
+\usecolortheme[RGB={50,50,100}]{structure}
+%\usecolortheme{rose}          %% colortheme を選ぶと色使いが変わる
+%\usecolortheme{albatross}
+
+%\useoutertheme{shadow}                 %% 箱に影をつける
+%\usefonttheme{professionalfonts}       %% 数式の文字を通常の LaTeX と同じにする
+
+\setbeamercovered{transparent}         %% 消えている文字をうっすらと表示する
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{appendix}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\theoremstyle{definition}
+\setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{proposition}[thm]{Proposition}
+\theoremstyle{example}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{question}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
+
+\begin{document}
+\title[title]{タイトル}
+\author[Name]{名前}%% ここに書かれた情報は色々なところに使われるので
+\institute[institution]{所属}   %% なるべく設定した方が良い
+\date{\today}
+
+\begin{frame}                  %% \begin{frame}..\end{frame} で 1 枚のスライド
+\titlepage                     %% タイトルページ
+\end{frame}
+
+\begin{frame}                  %% 目次 (必要なければ省略)
+\tableofcontents
+\end{frame}
+
+
+
+
+\begin{frame}[allowframebreaks]{Reference}
+\scriptsize
+\beamertemplatetextbibitems
+%\bibliographystyle{junsrt}
+%\bibliographystyle{plain}
+\bibliography{ref}
+\end{frame}
+\end{document}
