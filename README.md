@@ -6,7 +6,8 @@ Overleafはクラウド上でファイルを管理し、オートコンパイル
 
 ・用意するファイル
 
-main.tex　\\
+main.tex　
+
 latexmk
 
 reference.bib (参考文献を別で作りたい場合)
