@@ -1,15 +1,15 @@
-\documentclass[dvipdfmx,cjk,usepdftitle=false]{beamer} 
+\documentclass[t,aspectratio=169,dvipdfmx,cjk,usepdftitle=false]{beamer}  %% tで上詰め、aspectratio=169で比率を16:9
 \setbeamertemplate{caption}[numbered]
 
 \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} %% しおりが文字化けしないように
 %\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
 
-%\setbeamertemplate{navigation symbols}{} %% 右下のアイコンを消す
+\setbeamertemplate{navigation symbols}{} %% 右下のアイコンを消す
 
 %\usetheme{CambridgeUS}         %% theme の選択
 %\usetheme{Boadilla}           %% Beamer のディレクトリの中の
 \usetheme{Madrid}             %% beamerthemeCambridgeUS.sty を指定
-%\usetheme{Antibes}            %% 色々と試してみるといいだろう
+%\usetheme{Antibes} 
 %\usetheme{Montpellier}        %% サンプルが beamer\doc に色々とある。
 %\usetheme{Berkeley}
 %\usetheme{Goettingen}
@@ -24,6 +24,7 @@
 %\usefonttheme{professionalfonts}       %% 数式の文字を通常の LaTeX と同じにする
 
 \setbeamercovered{transparent}         %% 消えている文字をうっすらと表示する
+\renewcommand{\kanjifamilydefault}{\gtdefault}  %% 漢字をゴシック体にする
 
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -63,14 +64,15 @@
 \tableofcontents
 \end{frame}
 
-
-
+\begin{frame}{Frame Title}
+contents
+\end{frame}
 
 \begin{frame}[allowframebreaks]{Reference}
 \scriptsize
 \beamertemplatetextbibitems
 %\bibliographystyle{junsrt}
 %\bibliographystyle{plain}
-\bibliography{ref}
+\bibliography{reference}  %%reference.bibを同じフォルダ内に作って参考文献を参照
 \end{frame}
 \end{document}
